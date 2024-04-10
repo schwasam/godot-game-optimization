@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpyot0qqtmr0g"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqschvolh0tjy" path="res://models/tree/tree_obj.obj" id="1_a6mau"]
+[ext_resource type="Texture2D" path="res://models/tree/bark01.dds" id="2_kr28j"]
+[ext_resource type="Texture2D" path="res://models/tree/leaf04.dds" id="3_oadbn"]
+[ext_resource type="Texture2D" path="res://models/tree/leaf06.dds" id="4_2hfqm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8als"]
+albedo_texture = ExtResource("2_kr28j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2xre"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_oadbn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apt7p"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("4_2hfqm")
+
+[node name="Tree" type="MeshInstance3D"]
+mesh = ExtResource("1_a6mau")
+surface_material_override/0 = SubResource("StandardMaterial3D_s8als")
+surface_material_override/1 = SubResource("StandardMaterial3D_y2xre")
+surface_material_override/2 = SubResource("StandardMaterial3D_apt7p")

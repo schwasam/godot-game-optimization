@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7vps5xxnul6i"]
+
+[ext_resource type="Material" uid="uid://pq6lmm7ax7bh" path="res://models/house/HouseMaterial.tres" id="1_xlisc"]
+[ext_resource type="ArrayMesh" uid="uid://bgw5a1f8hrc0q" path="res://models/house/house.obj" id="2_wyskc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dyak"]
+size = Vector3(5.28699, 5.05566, 4.70801)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_rp7ou"]
+
+[node name="House" type="StaticBody3D"]
+
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = ExtResource("1_xlisc")
+mesh = ExtResource("2_wyskc")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338806, 2.47835, 0)
+shape = SubResource("BoxShape3D_7dyak")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(6.5, 0, 0, 0, 5.85, 0, 0, 0, 5, 0.369224, 3.08416, -0.137635)
+occluder = SubResource("BoxOccluder3D_rp7ou")

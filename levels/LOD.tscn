@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://q7vdu77j2duu"]
+
+[ext_resource type="PackedScene" uid="uid://wq8ibcjk3h53" path="res://models/statue/Statue.glb" id="1_xdn7u"]
+
+[node name="Lod" type="Node3D"]
+
+[node name="Statue" parent="." instance=ExtResource("1_xdn7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0710204, 0, -0.0532224)
+
+[node name="Statuie" parent="Statue" index="0"]
+lod_bias = 0.05
+
+[editable path="Statue"]
